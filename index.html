@@ -1,0 +1,246 @@
+<link rel="stylesheet" type="text/css" href="./resources/style.css" media="screen" />
+<link rel="stylesheet" href="resources/dics.original.css">
+
+<html lang="en">
+
+<head>
+    <title>
+        NoKSR: Kernel-free Neural Surface Reconstruction via Point Cloud Serialization
+    </title>
+    <meta property="og:title"
+        content="NoKSR: Kernel-Free Neural Surface Reconstruction via Point Cloud Serialization" />
+    <meta property="og:image" content="./resources/paper.png"/>
+  	<meta property="og:description" content="
+      A multi-scale, point-based surface reconstruction method that leverages point cloud serialization for fast neighbor approximation." />
+    <meta property="twitter:card"          content="summary" />
+    <meta property="twitter:title"         content="NoKSR: Kernel-free Neural Surface Reconstruction via Point Cloud Serialization" />
+    <meta property="twitter:description"   content="A multi-scale, point-based surface reconstruction method that leverages point cloud serialization for fast neighbor approximation." />
+    <meta property="twitter:image"         content="./resources/paper.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffffff; /* Optional: Set a background color for better visibility */
+        }
+        .larger-arrow {
+            font-size: 2.0em; /* Adjust the font size as needed */
+            letter-spacing: 4.0em; /* Adjust the letter spacing as needed */
+            display: inline-block; /* Ensures text-align works */
+        }
+    </style> 
+    <script src="resources/js/video_comparison.js"></script>    
+    <script src="resources/js/dics.original.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            NoKSR: Kernel-Free Neural Surface Reconstruction <br> via Point Cloud Serialization
+        </div>
+
+        <br><br>
+        <div class="author">
+            <a href="http://colinzhenli.github.io" target="_blank">Zhen (Colin) Li</a> <sup>1*</sup> 
+        </div>
+        <div class="author">
+            <a href="https://wsunid.github.io/" target="_blank">Weiwei Sun</a> <sup>2,3*†</sup>
+        </div>
+        <div class="author">
+            <a href="https://shrisudhan.github.io/" target="_blank">Shrisudhan Govindarajan</a> <sup>1</sup>  
+        </div>
+        <div class="author">
+            <a href="https://scholar.google.com/citations?user=eOPO9E0AAAAJ&hl=en" target="_blank">Shaobo Xia</a> <sup>4</sup> 
+        </div>
+        <div class="author">
+            <a href="http://drebain.com/" target="_blank">Daniel Rebain</a> <sup>2</sup> 
+        </div>
+        <div class="author">
+            <a href="https://www.cs.ubc.ca/~kmyi" target="_blank">Kwang Moo Yi</a> <sup>2</sup> 
+        </div>
+    
+        <div class="author">
+            <a href="https://taiya.github.io" target="_blank">Andrea Tagliasacchi</a> <sup>1,5,6</sup>
+        </div>
+
+        <br><br>
+        <div class="affiliation_group">
+            <div class="affiliation_1"><sup>1</sup> Simon Fraser University</div>
+            <div class="affiliation_1"><sup>2</sup> University of British Columbia</div>
+            <div class="affiliation_1"><sup>3</sup> Amazon</div>
+        </div>
+        <div class="affiliation_group">
+            <div class="affiliation_2"><sup>4</sup> Changsha University of Science and Technology</div>
+            <div class="affiliation_2"><sup>5</sup> University of Toronto</div>
+            <div class="affiliation_2"><sup>6</sup> Google DeepMind</div>
+        </div>
+        <div style="font-size: 0.9em;">* Co-first author</div>
+        <div style="font-size: 0.9em;">† Work done while at UBC</div>
+        <br><br>
+        
+        <br>
+        <div class="links"><a href="resources/paper.pdf">[Paper]</a></div>
+        <div class="links"><a href="https://github.com/theialab/noksr">[Code]</a></div>
+        <div class="links"><a href="https://arxiv.org/abs/2502.12534">[ArXiv]</a></div>
+        <br><br>
+
+        <hr>
+        <br>
+        <p style="width: 80%;">
+            <b>TL;DR:</b>
+            A multi-scale, point-based surface reconstruction method that leverages point cloud serialization for fast neighbor approximation.
+        </p>
+        <br> 
+        <div class="parent-video-compare-container">
+            <div class="video-compare-container" id="materialsDiv">
+                <video class="video" id="materials" loop playsinline autoPlay muted
+                  src="./resources/Carla/Carla-14_Reconstruction.mp4" onplay="resizeAndPlay(this)"></video>
+                <canvas height=0 class="videoMerge" id="materialsMerge"></canvas>
+            </div>
+        </div>
+        <br> 
+        <br> 
+        <p style="width: 80%;">
+            Note: Reconstruction results of Carla subset. 
+        </p>
+        <br> 
+        <hr>
+        <h1>Paper</h1>
+            <div class="paper-thumbnail">
+                <a href="resources/paper.pdf">
+                    <img class="layered-paper-big" width="100%" src="./resources/paper.png" alt="Paper thumbnail"/>
+                </a>
+            </div>
+            <div class="paper-info">
+                <h3> NoKSR: Kernel-Free Neural Surface Reconstruction via Point Cloud Serialization</h3>
+                <p>Zhen Li, Weiwei Sun, Shrisudhan Govindarajan, Shaobo Xia, Daniel Rebain, Kwang Moo Yi, Andrea Tagliasacchi</p>
+                <p>arXiv.</p>
+                <pre><code>@misc{li2025noksrkernelfreeneuralsurface,
+                    title={NoKSR: Kernel-Free Neural Surface Reconstruction via Point Cloud Serialization}, 
+                    author={Zhen Li and Weiwei Sun and Shrisudhan Govindarajan and Shaobo Xia and Daniel Rebain and Kwang Moo Yi and Andrea Tagliasacchi},
+                    year={2025},
+                    eprint={2502.12534},
+                    archivePrefix={arXiv},
+                    primaryClass={cs.CV},
+                    url={https://arxiv.org/abs/2502.12534}, 
+              }
+                </code></pre>
+            </div>
+        <br>
+        <hr>
+        <h1>Abstract</h1>
+        <p style="width: 80%;text-align: justify;">
+        We present a novel approach to large-scale point cloud
+        surface reconstruction by developing an efficient framework
+        that converts an irregular point cloud into a signed distance
+        field (SDF). Our backbone builds upon recent transformer-
+        based architectures (i.e. PointTransformerV3), that serial-
+        izes the point cloud into a locality-preserving sequence of
+        tokens. We efficiently predict t he SDF value at a point by ag-
+        gregating nearby tokens, where fast approximate neighbors
+        can be retrieved thanks to the serialization. We serialize
+        the point cloud at different levels/scales, and non-linearly
+        aggregate a feature to predict the SDF value. We show
+        that aggregating across multiple scales is critical to over-
+        come the approximations introduced by the serialization
+        (i.e. false negatives in the neighborhood). Our frameworks
+        sets the new state-of-the-art in terms of accuracy and effi-
+        ciency (better or similar performance with half the latency
+        of the best prior method, coupled with a simpler implemen-
+        tation), particularly on outdoor datasets where sparse-grid
+        methods have shown limited performance.
+        </p>
+        <br>    
+        <hr>
+        <h1>Method</h1>
+        <img style="width: 80%;" src="resources/figures/overview.png" alt="Method Overview" />
+        <br><br>
+        <p style="width: 80%;text-align: justify;">
+        <b>Overview</b>: We map a sparse input point cloud with a point cloud backbone into a point feature hierarchy, from which
+        we compute the signed distance of a query. At each level, we utilize the efficient procedure to retrieve local
+        neighborhoods of the query. We then compute per-level features with the aggregation module. At last, we sum
+        per-level features and convert it into the signed distance with an MLP.
+        </p>
+        <br>
+        <img style="width: 80%;" src="resources/figures/neighborhood.png" alt="Neighborhood Function" />
+        <br><br>
+        <p style="width: 80%;text-align: justify;">
+        <b> Neighborhood function</b>: (left) retrieving a local neighborhood with K-nearest neighbor(KNN) or ball-query methods is
+        challenging to implement efficiently on GPU hardware. (right) we
+        propose to retrieve a neighborhood from a 1-D ordered list, by
+        serializing points along a Hibert curve, and excluding the impact of points distant from the query (i.e. remove false positives).
+        </p>
+        <br>
+        <hr>
+        <h1>NKSR <font color="red">vs</font> NoKSR(ours)</h1>
+        <p style="width: 80%; text-align: justify;">
+            We compare NoKSR(ours) with baselines including Neural Kernel Surface Reconstruction (NKSR). Our method achieves high quality surface reconstructions
+            which preserve more details than NKSR, which loses information due to quantization for large and non-uniformly sampled datasets
+            like Carla. 
+            Note that we can move <font color="blue"> slider left and right </font> to see the comparison.    
+        </p>
+        <br> 
+        <div class="parent-video-compare-container">
+            <div class="b-dics", style="width: 100%; font-weight: 600;">
+                <img src="resources/Carla/Cropped_Carla_Original_Ours_36.png" alt="NoKSR (Ours)">
+                <img src="resources/Carla/Cropped_Carla_Original_NKSR_36.png" alt="NKSR">
+                <img src="resources/Carla/Cropped_Carla_Original_Input_36.png" alt="Input point cloud">
+            </div>
+        </div>
+        <br> 
+        <br> 
+        <hr>
+        <h1>More Reconstruction Results</h1>
+        <div class="container">
+            <div class="left_title">Outdoor Scene: Carla</div>
+            <img style="width: 80%;" src="resources/More_results/Carla.png"/>
+        </div>        
+        <br> 
+        <br> 
+        <div class="container">
+            <div class="left_title">Indoor Scene: ScanNet</div>
+            <img style="width: 80%;" src="resources/More_results/ScanNet.png"/>
+        </div>   
+        <br> 
+        <br> 
+        <div class="container">
+            <div class="left_title">Indoor Scene: SyntheticRoom</div>
+            <img style="width: 80%;" src="resources/More_results/Synthetic.png"/>
+        </div>   
+
+        <hr>
+        <h1>Acknowledgements</h1> 
+        This work was supported in part by the Natural Sciences and Engineering Research Council of Canada (NSERC) Discovery Grant, NSERC Collaborative Research and Development Grant, Google DeepMind, Digital Research Alliance of Canada, the Advanced Research Computing at the University of British Columbia, and the SFU Visual Computing Research Chair program. Shaobo Xia was supported by National Natural Science Foundation of China under Grant 42201481. We would also like to thank Jiahui Huang for the valuable discussion and feedback.
+
+    <br><br>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all video elements with the class 'myVideo'
+            var videos = document.querySelectorAll('.kitti360');
+    
+            // Set the playback rate for each video
+            videos.forEach(function(video) {
+                video.playbackRate = 0.3; // Adjust the playback rate as needed
+            });
+
+            new Dics({
+                container: document.querySelectorAll('.b-dics')[0],
+                hideTexts: false,
+                textPosition: "bottom",
+                // linesColor: 'rgb(0,0,0)'
+            });
+            // new Dics({
+            //     container: document.querySelectorAll('.b-dics')[1],
+            //     hideTexts: false,
+            //     textPosition: "bottom"
+            // });
+        });
+        initComparisons();
+    </script>
+    <br><br><br>
+
+</body>
+
+</html>
