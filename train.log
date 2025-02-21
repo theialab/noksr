@@ -1,0 +1,27 @@
+[2025-01-02 15:44:07,239][pycg.exp][WARNING] - Customized build of Open3D is not detected, to resolve this you can do:
+(recommended, using customized Open3D that enables view sync, animation, ...) 
+
+pip install python-pycg[full] -f https://pycg.s3.ap-northeast-1.amazonaws.com/packages/index.html
+
+
+[2025-01-02 15:44:10,471][torch.distributed.distributed_c10d][INFO] - Added key: store_based_barrier_key:1 to store for rank: 0
+[2025-01-02 15:44:10,471][torch.distributed.distributed_c10d][INFO] - Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 1 nodes.
+[2025-01-02 15:46:55,468][torch.nn.parallel.distributed][INFO] - Reducer buckets have been rebuilt in this iteration.
+[2025-01-02 15:53:14,873][pycg.exp][WARNING] - Customized build of Open3D is not detected, to resolve this you can do:
+(recommended, using customized Open3D that enables view sync, animation, ...) 
+
+pip install python-pycg[full] -f https://pycg.s3.ap-northeast-1.amazonaws.com/packages/index.html
+
+
+[2025-01-02 15:53:18,417][torch.distributed.distributed_c10d][INFO] - Added key: store_based_barrier_key:1 to store for rank: 0
+[2025-01-02 15:53:18,417][torch.distributed.distributed_c10d][INFO] - Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 1 nodes.
+[2025-01-02 15:53:22,497][torch.nn.parallel.distributed][INFO] - Reducer buckets have been rebuilt in this iteration.
+[2025-01-02 15:53:32,911][pycg.exp][WARNING] - Customized build of Open3D is not detected, to resolve this you can do:
+(recommended, using customized Open3D that enables view sync, animation, ...) 
+
+pip install python-pycg[full] -f https://pycg.s3.ap-northeast-1.amazonaws.com/packages/index.html
+
+
+[2025-01-02 15:53:36,194][torch.distributed.distributed_c10d][INFO] - Added key: store_based_barrier_key:1 to store for rank: 0
+[2025-01-02 15:53:36,194][torch.distributed.distributed_c10d][INFO] - Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 1 nodes.
+[2025-01-02 15:53:41,534][torch.nn.parallel.distributed][INFO] - Reducer buckets have been rebuilt in this iteration.

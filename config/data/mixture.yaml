@@ -1,0 +1,41 @@
+# Managed by Hydra
+
+defaults:
+  - base
+
+dataset: Mixture
+
+validation_set: Synthetic # ScanNet, Synthetic, or both
+metadata: # only for SscanNet
+  metadata_path: ${data.dataset_root_path}/scannetv2/metadata
+  train_list: ${data.dataset_root_path}/scannetv2/metadata/scannetv2_train.txt
+  val_list: ${data.dataset_root_path}/scannetv2/metadata/scannetv2_val.txt
+  test_list: ${data.dataset_root_path}/scannetv2/metadata/scannetv2_test.txt
+  combine_file: ${data.dataset_root_path}/scannetv2/metadata/scannetv2-labels.combined.tsv
+
+ScanNet:
+  dataset_path: ${data.dataset_root_path}/scannetv2
+  classes: 2
+  # ignore_classes: [ 1, 2 ]
+  class_names: [ 'floor', 'wall', 'cabinet', 'bed', 'chair', 'sofa', 'table', 'door', 'window', 'bookshelf', 'picture',
+                'counter', 'desk', 'curtain', 'refrigerator', 'shower curtain', 'toilet', 'sink',
+                'bathtub', 'otherfurniture' ]
+
+  mapping_classes_ids: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 24, 28, 33, 34, 36, 39 ]
+
+Synthetic:
+  path: ${data.dataset_root_path}/synthetic_data/synthetic_room_dataset
+
+  input_type: pointcloud_crop
+  classes: ['rooms_04', 'rooms_05', 'rooms_06', 'rooms_07', 'rooms_08']
+  pointcloud_n: 10000
+  std_dev: 0.00 # 0.005
+  # points_subsample: 1024
+  points_file: points_iou
+  points_iou_file: points_iou
+  pointcloud_file: pointcloud
+  pointcloud_chamfer_file: pointcloud
+  voxels_file: null
+  multi_files: 10
+  unit_size: 0.005 # size of a voxel (not used)
+  query_vol_size: 25

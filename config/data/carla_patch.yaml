@@ -1,0 +1,30 @@
+# Managed by Hydra
+
+defaults:
+  - base
+
+dataset: Carla
+
+base_path: ${data.dataset_root_path}/carla-lidar/dataset
+input_path: ${data.dataset_root_path}/carla-lidar/dataset-p1n2
+
+drives: ['Town01-0', 'Town01-1', 'Town01-2',
+                'Town02-0', 'Town02-1', 'Town02-2',
+                'Town10-0', 'Town10-1', 'Town10-2', 'Town10-3', 'Town10-4']
+
+voxel_size: 0.1
+
+transforms: []
+
+supervision:
+  sdf:
+    max_dist: 0.6
+    
+  udf:
+    max_dist: 0.6
+
+reconstruction:
+  mask_threshold: 0.1
+
+evaluation:
+  evaluator: "MeshEvaluator" # align evaluation with NKSR 

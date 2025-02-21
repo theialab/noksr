@@ -1,0 +1,34 @@
+# Managed by Hydra
+
+defaults:
+  - base
+
+dataset: Synthetic
+path: ${data.dataset_root_path}/synthetic_data/synthetic_room_dataset
+
+input_type: pointcloud_crop
+classes: ['rooms_04', 'rooms_05', 'rooms_06', 'rooms_07', 'rooms_08']
+pointcloud_n: 10000
+# std_dev: 0.00 # 0.005
+# points_subsample: 1024
+points_file: points_iou
+points_iou_file: points_iou
+pointcloud_file: pointcloud
+pointcloud_chamfer_file: pointcloud
+voxels_file: null
+multi_files: 10
+unit_size: 0.005 # size of a voxel (not used)
+query_vol_size: 25
+
+supervision:
+  sdf:
+    max_dist: 0.2
+    
+  udf:
+    max_dist: 0.2
+
+reconstruction:
+  mask_threshold: 0.01
+
+evaluation:
+  evaluator: "UnitMeshEvaluator"

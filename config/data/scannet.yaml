@@ -1,0 +1,26 @@
+# Managed by Hydra
+
+defaults:
+  - base
+
+dataset: Scannet
+dataset_path: ${data.dataset_root_path}/scannetv2
+
+metadata:
+  metadata_path: ${data.dataset_root_path}/scannetv2/metadata
+  train_list: ${data.dataset_root_path}/scannetv2/metadata/scannetv2_train.txt
+  val_list: ${data.dataset_root_path}/scannetv2/metadata/scannetv2_val.txt
+  test_list: ${data.dataset_root_path}/scannetv2/metadata/scannetv2_test.txt
+  combine_file: ${data.dataset_root_path}/scannetv2/metadata/scannetv2-labels.combined.tsv
+
+supervision:
+  sdf:
+    max_dist: 0.2 
+  udf:
+    max_dist: 0.2
+
+reconstruction:
+  mask_threshold: 0.015
+
+evaluation:
+  evaluator: "UnitMeshEvaluator"

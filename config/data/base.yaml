@@ -1,0 +1,92 @@
+# Managed by Hydra
+
+dataset_root_path: data
+
+batch_size: 1
+num_workers: 4
+voxel_size: 0.02 # only used to compute neighboring radius
+
+supervision:
+  only_l1_sdf_loss: false
+  structure_weight: 20.0
+
+  gt_type: "PointTSDFVolume"
+
+  on_surface:
+    normal_loss: False # supervised normal by nksr style loss
+    weight: 200.0
+    normal_weight: 100.0
+    subsample: 10000
+    svh_tree_depth: 4
+
+  sdf:
+    max_dist: 0.2
+    weight: 300.0
+    reg_sdf_weight: 0.0
+    svh_tree_depth: 4
+    samplers:
+      - type: "uniform"
+        n_samples: 10000
+        expand: 1
+        expand_top: 3
+      - type: "band"
+        n_samples: 10000
+        eps: 0.5    # Times voxel size.
+
+    truncate: False # whether to truncate the SDF values
+    gt_type: "l1"   # or 'l1'
+    gt_soft: true
+    gt_band: 1.0        # times voxel size.
+    pd_transform: true
+    # (For AV Supervision)
+    vol_sup: true
+
+  udf:
+    max_dist: 0.2
+    abs_sdf: True
+    weight: 150.0
+    svh_tree_depth: 4
+    samplers:
+      - type: "uniform"
+        n_samples: 10000
+        expand: 1
+        expand_top: 5
+      - type: "band"
+        n_samples: 10000
+        eps: 0.5    # Times voxel size.
+
+  eikonal:
+    loss: False
+    flip: True # flip the gradient sign
+    weight: 10.0
+
+  laplacian:
+    loss: False
+    weight: 0.0
+
+num_input_points: 10000
+uniform_sampling: True
+input_splats: False
+num_query_points: 50000
+std_dev: 0.00 # noise to add to the input points
+in_memory: True # whether precompute voxel indices and load voxel into memory
+
+take: -1 # how many data to take for training and validation, -1 means all
+intake_start: 0
+over_fitting: False # whether to use only one voxel for training and validation
+
+reconstruction:
+  by_segment: False
+  segment_num: 10
+  trim: True
+  gt_mask: False
+  gt_sdf: False
+
+visualization:
+  save: False
+  Mesh: True
+  Input_points: True
+  Dense_points: False
+
+
+                                                                      

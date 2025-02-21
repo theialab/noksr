@@ -1,0 +1,25 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "eval.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "model=carla_model",
+                "data=carla_no_patch",
+                "model.ckpt_path=../checkpoints/Carla_Serial_Segment.ckpt",
+                "model.network.default_decoder.neighboring=Serial",
+                "data.dataset_root_path=/localhome/zla247/theia2_data",
+                "output_folder=/localhome/zla247/theia2_data/output/noksr",
+                "experiment_name=Carla_50-Segment_Inference"
+            ]
+        }
+    ]
+}
