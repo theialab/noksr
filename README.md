@@ -38,7 +38,7 @@ The code is tested on Ubuntu 20.04 LTS with PyTorch 2.0.0 CUDA 11.8 installed. P
 
 ```
 # Clone the repository
-git clone git@github.com:colinzhenli/noksr.git
+git clone https://github.com/theialab/noksr.git
 cd noksr
 
 # create and activate the conda environment
