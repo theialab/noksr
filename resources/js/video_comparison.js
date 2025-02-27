@@ -1,6 +1,6 @@
 let autoMove = true; // Variable to track if the slider should auto-move
 let direction = 1;   // Direction of the auto movement (1: right, -1: left)
-let speed = 0.2;   // Speed of the auto movement
+let speed = 0.4;   // Speed of the auto movement
 
 // Current state:
 let position = 0.5;    // somewhere between 0 and 1
