@@ -1,12 +1,17 @@
 let autoMove = true; // Variable to track if the slider should auto-move
 let direction = 1;   // Direction of the auto movement (1: right, -1: left)
-let speed = 0.005;   // Speed of the auto movement
+let speed = 1;   // Speed of the auto movement
+
+// Current state:
+let position = 0.5;    // somewhere between 0 and 1
+let deltaTime = 0.01;  // or however your animation tick is measured
 
 function playVids(videoId) {
     var videoMerge = document.getElementById(videoId + "Merge");
     var vid = document.getElementById(videoId);
 
     var position = 0.5; // Initial slider position
+    let time = 0; // Add a time variable
     var vidWidth = vid.videoWidth / 2;
     var vidHeight = vid.videoHeight;
 
@@ -34,16 +39,18 @@ function playVids(videoId) {
         videoMerge.addEventListener("mousemove", trackLocation, false);
         videoMerge.addEventListener("touchstart", trackLocationTouch, false);
         videoMerge.addEventListener("touchmove", trackLocationTouch, false);
-
         function drawLoop() {
             // Handle automatic movement of the slider
+            // if (autoMove) {
+            //     position += direction * speed;
+            //     if (position >= 1 || position <= 0) {
+            //         direction *= -1; // Reverse direction when reaching edges
+            //     }
+            // }
             if (autoMove) {
-                position += direction * speed;
-                if (position >= 1 || position <= 0) {
-                    direction *= -1; // Reverse direction when reaching edges
-                }
+                time += deltaTime;
+                position = 0.75 * Math.sin(speed * time) * 0.5 + 0.5;
             }
-
             mergeContext.clearRect(0, 0, vidWidth * 2, vidHeight); // Clear the canvas
             mergeContext.drawImage(vid, 0, 0, vidWidth, vidHeight, 0, 0, vidWidth, vidHeight);
             var colStart = (vidWidth * position).clamp(0.0, vidWidth);
