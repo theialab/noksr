@@ -14,7 +14,7 @@ function playVids(videoId) {
     let time = 0; // Add a time variable
     var vidWidth = vid.videoWidth / 2;
     var vidHeight = vid.videoHeight;
-    startTime = Date.now()
+    startTime = performance.now()
 
     var mergeContext = videoMerge.getContext("2d");
 
@@ -51,7 +51,7 @@ function playVids(videoId) {
             if (autoMove) {
                 // time += deltaTime;
                 speed = (2 * Math.PI) / period
-                time = (Date.now() - startTime) / 1000;
+                time = (performance.now() - startTime) / 1000;
                 position = 0.75 * Math.sin(speed * time - Math.PI / 2) * 0.5 + 0.5;
             }
             mergeContext.clearRect(0, 0, vidWidth * 2, vidHeight); // Clear the canvas
