@@ -1,6 +1,6 @@
 let autoMove = true; // Variable to track if the slider should auto-move
 let direction = 1;   // Direction of the auto movement (1: right, -1: left)
-let speed = 1;   // Speed of the auto movement
+let period = 15;
 
 // Current state:
 let position = 0.5;    // somewhere between 0 and 1
@@ -14,6 +14,7 @@ function playVids(videoId) {
     let time = 0; // Add a time variable
     var vidWidth = vid.videoWidth / 2;
     var vidHeight = vid.videoHeight;
+    startTime = Date.now()
 
     var mergeContext = videoMerge.getContext("2d");
 
@@ -48,8 +49,10 @@ function playVids(videoId) {
             //     }
             // }
             if (autoMove) {
-                time += deltaTime;
-                position = 0.75 * Math.sin(speed * time) * 0.5 + 0.5;
+                // time += deltaTime;
+                speed = (2 * Math.PI) / period
+                time = (Date.now() - startTime) / 1000;
+                position = 0.75 * Math.sin(speed * time - Math.PI / 2) * 0.5 + 0.5;
             }
             mergeContext.clearRect(0, 0, vidWidth * 2, vidHeight); // Clear the canvas
             mergeContext.drawImage(vid, 0, 0, vidWidth, vidHeight, 0, 0, vidWidth, vidHeight);
