@@ -27,8 +27,23 @@ tation), particularly on outdoor datasets where sparse-grid
 methods have shown limited performance. 
 
 Contact [Zhen Li @ SFU](zla247@sfu.ca) for questions, comments and reporting bugs.
+
+## Related Package
+
+We implemented the fast approximate neighbor search algorithm in the package [`serial-neighbor`](https://pypi.org/project/serial-neighbor/) — a standalone pip package that provides fast and flexible point cloud neighbor search using serialization encoding by space-filling curves (Z-order, Hilbert, etc.).
+
+- **📦 PyPI**: [`serial-neighbor`](https://pypi.org/project/serial-neighbor/)
+- **🔗 GitHub**: [https://github.com/colinzhenli/serial-neighbor](https://github.com/colinzhenli/serial-neighbor)
+
+You can install it via:
+
+```bash
+pip install serial-neighbor
+```
+
 ## News    
 
+- [2025/03/22] The package [`serial-neighbor`](https://pypi.org/project/serial-neighbor/) is released.
 - [2025/02/21] The code is released.
 - [2025/02/19] The arXiv version is released.
 
