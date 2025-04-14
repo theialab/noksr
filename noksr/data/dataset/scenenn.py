@@ -35,9 +35,6 @@ class SceneNN(Dataset):
     
     def __getitem__(self, idx):
         """Get item."""
-        # seed_value = 42
-        # np.random.seed(seed_value)
-
         # load the mesh
         scene_filename = self.filenames[idx]
 

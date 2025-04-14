@@ -68,9 +68,6 @@ class Scannet(Dataset):
         all_normals = scene['normal']
         scene_name = scene['scene_name']
 
-        seed_value = 42
-        np.random.seed(seed_value)
-
         # sample input points
         num_points = scene["xyz"].shape[0]
         num_input_points = self.num_input_points

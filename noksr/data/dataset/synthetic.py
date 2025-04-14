@@ -117,8 +117,6 @@ class Synthetic(Dataset):
         Args:
             idx (int): ID of data point
         '''
-        seed_value = 42
-        np.random.seed(seed_value)
         category = self.models[idx]['category']
         model = self.models[idx]['model']
         c_idx = self.metadata[category]['idx']
