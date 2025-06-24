@@ -131,7 +131,7 @@ In addition, you can manually specify different training settings. Common flags 
 
 You can either infer using your own trained models or our pre-trained checkpoints.
 
-The pre-trained checkpoints on different datasets with different neighboring types are available [here](https://drive.google.com/file/d/1hMm5cnCOfNmr_PgkpOmwRnzCCG4wPqnu/view?usp=drive_link), you can download and put them under `noksr/checkpoints/`.
+The pre-trained checkpoints on different datasets with different neighboring types are available[here](https://drive.google.com/file/d/14Xrbbox87tLjwE4vmQkEM2u5-vrWW008/viewusp=drive_link),Now it includes the Laplacian version, and you can download and put them under `noksr/checkpoints/`.
 
 ```bash
 # For example, Carla original dataset with Serialization neighboring, you need more than 24GB GPU memory to inferece the CARLA dataset, we recommend using a server.
